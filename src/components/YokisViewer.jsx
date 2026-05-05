@@ -36,11 +36,11 @@ export default function YokisViewer() {
       >
         <div
           className="face front"
-          style={{ backgroundImage: 'url(/yokis-front.png)' }}
+          style={{ backgroundImage: 'url(yokis-front.png)' }}
         />
         <div
           className="face back"
-          style={{ backgroundImage: 'url(/yokis-plates-trio-cut.png)' }}
+          style={{ backgroundImage: 'url(yokis-plates-trio-cut.png)' }}
         />
       </div>
       <div className="controls">
