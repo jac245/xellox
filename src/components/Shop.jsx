@@ -32,7 +32,7 @@ export default function Shop({ onBuy, onViewProduct }) {
             </div>
           </div>
           <div className="img-stage" style={{ cursor: 'pointer' }} onClick={onViewProduct} title="View product">
-            <img src="yokis-front.png" alt="Yokis Steel Backup" />
+            <img src="/yokis-front.png" alt="Yokis Steel Backup" />
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export default function Shop({ onBuy, onViewProduct }) {
               >Add to cart</button>
             </div>
             <div className="img-cell">
-              <img src="yokis-plates-fan.jpg" alt="Single plate" />
+              <img src="/yokis-plates-fan.jpg" alt="Single plate" />
             </div>
           </div>
 
@@ -73,7 +73,7 @@ export default function Shop({ onBuy, onViewProduct }) {
               >Add to cart</button>
             </div>
             <div className="img-cell">
-              <img src="yokis-plates-trio-cut.png" alt="3-plate backup set" />
+              <img src="/yokis-plates-trio-cut.png" alt="3-plate backup set" />
             </div>
           </div>
         </div>

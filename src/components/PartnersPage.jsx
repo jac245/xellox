@@ -86,7 +86,7 @@ export default function PartnersPage() {
               </ul>
             </div>
             <div className="wl-visual">
-              <img src="yokis-front.png" alt="Yokis — whitelabel" />
+              <img src="/yokis-front.png" alt="Yokis — whitelabel" />
             </div>
           </div>
         </div>
