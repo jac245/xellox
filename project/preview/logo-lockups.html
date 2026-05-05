@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:#f6f6f7;color:#0a0a0c;font-family:var(--xlx-font-body)}
+  .card{padding:24px;height:240px;box-sizing:border-box;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  .tile{border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px;border:1px solid transparent}
+  .lock{display:flex;align-items:center;gap:14px}
+  .lock img{width:48px;height:48px;display:block}
+  .lock.invert img{filter:invert(1)}
+  .word{font-family:var(--xlx-font-display);font-weight:700;letter-spacing:.18em;font-size:22px}
+  .label{font-family:var(--xlx-font-mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;opacity:.65}
+  .dark{background:#0a0a0c;color:#fff;border-color:#0a0a0c}
+  .light{background:#fff;color:#0a0a0c;border-color:#e2e2e7}
+  .stone{background:#ececef;color:#0a0a0c}
+  .mark-only{display:flex;align-items:center;justify-content:center;gap:0}
+  .mark-only img{width:64px;height:64px}
+</style></head>
+<body>
+<div class="card">
+  <div class="tile dark">
+    <div class="lock"><img src="../assets/logo-x-square.webp" alt="Xellox"><span class="word">XELLOX</span></div>
+    <span class="label">Primary · on dark</span>
+  </div>
+  <div class="tile light">
+    <div class="lock invert"><img src="../assets/logo-x-square.webp" alt="Xellox"><span class="word">XELLOX</span></div>
+    <span class="label">Secondary · on light</span>
+  </div>
+  <div class="tile stone">
+    <div class="lock invert mark-only"><img src="../assets/logo-x-square.webp" alt="Xellox mark"></div>
+    <span class="label">Mark only · favicon / app</span>
+  </div>
+</div>
+</body></html>

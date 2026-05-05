@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--xlx-bg);color:var(--xlx-fg)}
+  .card{padding:24px 28px;height:160px;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;justify-content:center}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-family:var(--xlx-font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;border:1px solid transparent}
+  .accent{background:rgba(247,147,26,.12);color:var(--xlx-orange-300);border-color:rgba(247,147,26,.3)}
+  .neutral{background:var(--xlx-ink-800);color:var(--xlx-fg-2);border-color:var(--xlx-border-2)}
+  .succ{background:rgba(45,212,122,.1);color:#5fe39b;border-color:rgba(45,212,122,.3)}
+  .warn{background:rgba(255,184,74,.1);color:#ffc77a;border-color:rgba(255,184,74,.3)}
+  .dot{width:6px;height:6px;border-radius:999px;background:currentColor;box-shadow:0 0 8px currentColor}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;background:var(--xlx-ink-800);border:1px solid var(--xlx-border);font-size:13px;color:var(--xlx-fg-1);font-family:var(--xlx-font-display)}
+  .chip.on{border-color:var(--xlx-accent);background:rgba(247,147,26,.08);color:#fff}
+</style></head>
+<body class="xlx-page">
+<div class="card">
+  <div class="row">
+    <span class="badge succ"><span class="dot"></span>In stock</span>
+    <span class="badge warn"><span class="dot"></span>Ships in 5 days</span>
+    <span class="badge accent">New</span>
+    <span class="badge neutral">v2.1</span>
+    <span class="badge neutral">EU only</span>
+    <span class="badge accent">₿ accepted</span>
+  </div>
+  <div class="row">
+    <span class="chip on">All products</span>
+    <span class="chip">Yokis</span>
+    <span class="chip">Hardware wallets</span>
+    <span class="chip">Accessories</span>
+    <span class="chip">Apparel</span>
+  </div>
+</div>
+</body></html>

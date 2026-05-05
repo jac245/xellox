@@ -1,0 +1,31 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--xlx-bg);color:var(--xlx-fg)}
+  .card{padding:24px 28px;height:200px;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;font-family:var(--xlx-font-mono);font-size:14px}
+  .label{font-family:var(--xlx-font-mono);font-size:10px;color:var(--xlx-fg-3);letter-spacing:.18em;text-transform:uppercase;margin-bottom:4px}
+  .seed{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+  .word{background:var(--xlx-ink-800);border:1px solid var(--xlx-border);border-radius:6px;padding:6px 10px;font-size:13px;color:var(--xlx-fg-1)}
+  .word .n{color:var(--xlx-fg-3);font-size:10px;margin-right:6px}
+  .word.active{border-color:var(--xlx-accent);box-shadow:var(--xlx-glow-orange);color:#fff}
+  .hex{color:var(--xlx-fg-2);font-size:13px;letter-spacing:.02em}
+  .hex b{color:var(--xlx-accent);font-weight:500}
+</style></head>
+<body class="xlx-page">
+<div class="card">
+  <div>
+    <div class="label">Mono · seed words (JetBrains Mono)</div>
+    <div class="seed">
+      <div class="word"><span class="n">01</span>abandon</div>
+      <div class="word"><span class="n">02</span>ability</div>
+      <div class="word"><span class="n">03</span>able</div>
+      <div class="word active"><span class="n">04</span>about</div>
+      <div class="word"><span class="n">05</span>above</div>
+      <div class="word"><span class="n">06</span>absent</div>
+    </div>
+  </div>
+  <div>
+    <div class="label">Mono · txid</div>
+    <div class="hex">tx <b>4a8f2e9c</b>·d7b1·3f02·a90c·<b>e8f1b2c4d6a8</b></div>
+  </div>
+</div>
+</body></html>

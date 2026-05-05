@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:#f6f6f7;color:#0a0a0c;font-family:var(--xlx-font-body)}
+  .card{padding:28px;height:240px;box-sizing:border-box;display:flex;flex-direction:column;gap:16px;justify-content:center}
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .label{font-family:var(--xlx-font-mono);font-size:9px;color:#6c6c76;letter-spacing:.18em;text-transform:uppercase;width:80px;flex-shrink:0}
+  .btn{font-family:var(--xlx-font-display);font-weight:500;font-size:14px;padding:10px 20px;border-radius:8px;cursor:pointer;border:1px solid transparent;display:inline-flex;align-items:center;gap:8px;letter-spacing:.01em;transition:all .15s var(--xlx-ease-out)}
+  /* Primary = solid black on white background */
+  .primary{background:#0a0a0c;color:#fff;border-color:#0a0a0c}
+  .primary.hover{background:#1a1a1f;box-shadow:0 4px 14px rgba(10,10,12,.18)}
+  .primary.press{background:#000;transform:scale(.98)}
+  /* Ghost = light surface bordered */
+  .ghost{background:#fff;color:#0a0a0c;border-color:#d8d8dc}
+  .ghost.hover{background:#fff;border-color:#0a0a0c}
+  /* Quiet */
+  .quiet{background:transparent;color:#404048;border-color:transparent;padding:10px 12px}
+  .quiet.hover{color:#0a0a0c;background:rgba(10,10,12,.05)}
+  .small{padding:6px 12px;font-size:12px;border-radius:6px}
+  .lg{padding:14px 28px;font-size:16px;border-radius:10px}
+  .icon{width:14px;height:14px;display:inline-block;background:currentColor;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M5 12h14m-6-6 6 6-6 6'/></svg>") center/contain no-repeat}
+</style></head>
+<body>
+<div class="card">
+  <div class="row"><span class="label">Primary</span>
+    <button class="btn primary">Pay with bitcoin</button>
+    <button class="btn primary hover">Hover</button>
+    <button class="btn primary press">Press</button>
+    <button class="btn primary" disabled style="opacity:.4;cursor:not-allowed">Disabled</button>
+  </div>
+  <div class="row"><span class="label">Ghost</span>
+    <button class="btn ghost">View specs</button>
+    <button class="btn ghost hover">Hover</button>
+    <button class="btn quiet">Cancel</button>
+    <button class="btn quiet hover">Hover</button>
+  </div>
+  <div class="row"><span class="label">Sizes</span>
+    <button class="btn primary small">Add</button>
+    <button class="btn primary">Order Yokis</button>
+    <button class="btn primary lg">Order Yokis <span class="icon"></span></button>
+  </div>
+</div>
+</body></html>

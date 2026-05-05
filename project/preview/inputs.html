@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--xlx-bg);color:var(--xlx-fg)}
+  .card{padding:28px 32px;height:260px;box-sizing:border-box;display:grid;grid-template-columns:1fr 1fr;gap:20px 36px;align-content:center}
+  .field{display:flex;flex-direction:column;gap:4px;position:relative}
+  .field label{font-family:var(--xlx-font-mono);font-size:10px;color:var(--xlx-fg-3);letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+  .field label::before{content:"";width:6px;height:1px;background:currentColor}
+  .field .ipt{position:relative;display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--xlx-border-2);transition:border-color .15s}
+  .field .ipt input,.field .ipt select{flex:1;font-family:var(--xlx-font-mono);font-size:15px;background:transparent;border:0;outline:0;color:var(--xlx-fg);padding:0;letter-spacing:.01em}
+  .field .ipt input::placeholder{color:var(--xlx-fg-3)}
+  .field .ipt .caret{width:7px;height:14px;background:var(--xlx-fg);animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .field.focus .ipt{border-bottom-color:var(--xlx-fg);border-bottom-width:2px;padding-bottom:7px}
+  .field.focus label{color:var(--xlx-fg)}
+  .field.error .ipt{border-bottom-color:var(--xlx-danger)}
+  .field.error label{color:var(--xlx-danger)}
+  .err-msg{font-family:var(--xlx-font-mono);font-size:11px;color:var(--xlx-danger);margin-top:6px;display:flex;align-items:center;gap:6px}
+  .err-msg::before{content:"!";display:inline-flex;width:14px;height:14px;border-radius:50%;background:var(--xlx-danger);color:#0a0a0c;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+
+  .controls{display:flex;gap:18px;align-items:center;grid-column:1/-1}
+  .check{display:flex;align-items:center;gap:10px;font-family:var(--xlx-font-mono);font-size:12px;color:var(--xlx-fg-1);letter-spacing:.04em;cursor:pointer}
+  .box{width:16px;height:16px;border:1.5px solid var(--xlx-border-2);background:transparent;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .box.on{border-color:var(--xlx-fg);background:var(--xlx-fg)}
+  .box.on::before{content:"";width:8px;height:5px;border-left:2px solid #000;border-bottom:2px solid #000;transform:rotate(-45deg);margin-top:-2px}
+  .toggle{width:34px;height:18px;background:var(--xlx-ink-700);border:1px solid var(--xlx-border-2);border-radius:999px;position:relative;flex-shrink:0;transition:all .15s}
+  .toggle::after{content:"";position:absolute;top:1px;left:1px;width:14px;height:14px;border-radius:999px;background:var(--xlx-fg-3);transition:all .2s var(--xlx-ease-out)}
+  .toggle.on{background:#000;border-color:var(--xlx-fg)}
+  .toggle.on::after{left:17px;background:var(--xlx-fg)}
+</style></head>
+<body class="xlx-page">
+<div class="card">
+  <div class="field">
+    <label>Email</label>
+    <div class="ipt"><input placeholder="satoshi@xellox.io"></div>
+  </div>
+  <div class="field focus">
+    <label>Address · focus</label>
+    <div class="ipt"><input value="bc1q··xellox··3y8w·9k2m·a7f4"><span class="caret"></span></div>
+  </div>
+  <div class="field">
+    <label>Country</label>
+    <div class="ipt"><select><option>Germany</option></select><span style="color:var(--xlx-fg-3);font-size:12px">▾</span></div>
+  </div>
+  <div class="field error">
+    <label>Postal code · error</label>
+    <div class="ipt"><input value="0"></div>
+    <span class="err-msg">Enter a valid postal code.</span>
+  </div>
+  <div class="controls">
+    <label class="check"><span class="box on"></span>Pay with BTC</label>
+    <label class="check"><span class="box"></span>Pay with card</label>
+    <label class="check"><span class="toggle on"></span>Bitcoin-only updates</label>
+    <label class="check" style="margin-left:auto;color:var(--xlx-fg-3)"><span class="toggle"></span>Marketing</label>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:#f6f6f7;color:#0a0a0c;font-family:var(--xlx-font-body)}
+  .card{padding:24px;height:380px;box-sizing:border-box;display:flex;gap:20px;align-items:stretch}
+  .product{flex:1;background:#fff;border:1px solid #e2e2e7;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(10,10,12,.04);position:relative;transition:all .25s}
+  .product:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(10,10,12,.08)}
+  .product .img{aspect-ratio:1.2/1;background:#fff center/contain no-repeat;position:relative;border-bottom:1px solid #ececef}
+  .product .img::before{content:"";position:absolute;inset:14% 14% 8% 14%;background:radial-gradient(ellipse at 50% 75%,rgba(10,10,12,.14),transparent 60%);filter:blur(18px)}
+  .product .img.yokis{background-image:url(../assets/yokis-plates-fan.jpg);background-size:88%}
+  .product .img.pen{background-image:url(../assets/engraving-pen.webp);background-size:55%}
+  .product .meta{padding:18px 22px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .eyebrow{font-family:var(--xlx-font-mono);font-size:10px;color:#6c6c76;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+  .name{font-family:var(--xlx-font-display);font-size:20px;font-weight:600;letter-spacing:-.01em;color:#0a0a0c}
+  .desc{font-size:13px;color:#404048;line-height:1.45;flex:1;margin-top:2px}
+  .price{display:flex;align-items:baseline;gap:8px;font-family:var(--xlx-font-display);margin-top:10px}
+  .price .b{color:#0a0a0c;font-weight:600;font-size:18px;letter-spacing:-.01em}
+  .price .usd{color:#6c6c76;font-size:12px;font-family:var(--xlx-font-mono)}
+  .badge{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);color:#0a0a0c;border:1px solid #e2e2e7;padding:4px 10px;border-radius:999px;font-family:var(--xlx-font-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:6px;font-weight:500}
+  .badge .d{width:5px;height:5px;border-radius:999px;background:#2dd47a;box-shadow:0 0 8px rgba(45,212,122,.6)}
+</style></head>
+<body>
+<div class="card">
+  <div class="product">
+    <div class="img yokis"><span class="badge"><span class="d"></span>In stock</span></div>
+    <div class="meta">
+      <span class="eyebrow">Yokis · 304 Stainless</span>
+      <span class="name">Yokis Steel Backup</span>
+      <span class="desc">3 engravable plates in an anodized housing. Engrave 24 words once, read it back in 30 years.</span>
+      <div class="price"><span class="b">₿ 0.0042</span><span class="usd">$249</span></div>
+    </div>
+  </div>
+  <div class="product">
+    <div class="img pen"></div>
+    <div class="meta">
+      <span class="eyebrow">Bundle · scribe + 3 plates</span>
+      <span class="name">Engraving Pen Kit</span>
+      <span class="desc">Tungsten carbide scribe with knurled grip — ships with three matching 304 stainless plates ready to engrave.</span>
+      <div class="price"><span class="b">₿ 0.0014</span><span class="usd">$89</span></div>
+    </div>
+  </div>
+</div>
+</body></html>

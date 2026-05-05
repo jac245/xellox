@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--xlx-bg);color:var(--xlx-fg)}
+  .card{padding:32px;height:240px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-around;gap:24px}
+  .item{display:flex;flex-direction:column;align-items:center;gap:14px;font-family:var(--xlx-font-mono);font-size:10px;color:var(--xlx-fg-3);letter-spacing:.04em;text-transform:uppercase}
+  .box{width:120px;height:80px;background:var(--xlx-ink-800);border:1px solid var(--xlx-border);border-radius:12px}
+  .item b{color:var(--xlx-fg-1);font-weight:500;font-size:11px}
+</style></head>
+<body class="xlx-page">
+<div class="card">
+  <div class="item"><div class="box" style="box-shadow:var(--xlx-shadow-card)"></div><b>card</b><span>elevated 1</span></div>
+  <div class="item"><div class="box" style="box-shadow:var(--xlx-shadow-pop)"></div><b>pop</b><span>menu / popover</span></div>
+  <div class="item"><div class="box" style="box-shadow:var(--xlx-shadow-float)"></div><b>float</b><span>hero / modal</span></div>
+  <div class="item"><div class="box" style="box-shadow:var(--xlx-glow-orange);border-color:transparent"></div><b>glow</b><span>focus / active</span></div>
+</div>
+</body></html>

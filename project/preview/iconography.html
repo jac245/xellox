@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--xlx-bg);color:var(--xlx-fg)}
+  .card{padding:24px;height:200px;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;justify-content:center}
+  .row{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+  .ico{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--xlx-fg-1);width:64px}
+  .ico svg{width:22px;height:22px;stroke-width:1.75}
+  .ico .l{font-family:var(--xlx-font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--xlx-fg-3)}
+  .note{font-family:var(--xlx-font-mono);font-size:10px;color:var(--xlx-fg-3);letter-spacing:.04em}
+  .bitcoin{color:var(--xlx-accent)}
+</style></head>
+<body class="xlx-page">
+<div class="card">
+  <div class="row" id="lucide-row">
+    <div class="ico"><i data-lucide="shield-check"></i><span class="l">shield</span></div>
+    <div class="ico"><i data-lucide="key-round"></i><span class="l">key</span></div>
+    <div class="ico"><i data-lucide="lock"></i><span class="l">lock</span></div>
+    <div class="ico bitcoin"><i data-lucide="bitcoin"></i><span class="l" style="color:var(--xlx-accent)">btc</span></div>
+    <div class="ico"><i data-lucide="cpu"></i><span class="l">cpu</span></div>
+    <div class="ico"><i data-lucide="flame"></i><span class="l">fire</span></div>
+    <div class="ico"><i data-lucide="droplets"></i><span class="l">water</span></div>
+    <div class="ico"><i data-lucide="package"></i><span class="l">ship</span></div>
+    <div class="ico"><i data-lucide="arrow-right"></i><span class="l">arrow</span></div>
+    <div class="ico"><i data-lucide="check"></i><span class="l">check</span></div>
+    <div class="ico"><i data-lucide="x"></i><span class="l">x</span></div>
+    <div class="ico"><i data-lucide="menu"></i><span class="l">menu</span></div>
+  </div>
+  <div class="note">Set: Lucide · stroke 1.75 · 22px UI / 16px inline · color: currentColor</div>
+</div>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>lucide.createIcons();</script>
+</body></html>

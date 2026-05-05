@@ -1,0 +1,232 @@
+/* =========================================================
+   XELLOX — Colors & Type tokens
+   A bright, techy bitcoin brand. Hardware-wallet maker.
+   ========================================================= */
+
+/* ---------- Webfonts ----------
+   Display + UI:  Space Grotesk (geometric, slightly techy)
+   Mono / data:   JetBrains Mono (seed words, serial numbers, hex)
+   Both available via Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ============ COLORS ============ */
+
+  /* Brand — Bitcoin orange scale */
+  --xlx-orange-50:  #fff4ec;
+  --xlx-orange-100: #ffe1c8;
+  --xlx-orange-200: #ffc190;
+  --xlx-orange-300: #ff9d54;
+  --xlx-orange-400: #ff8124;   /* hover */
+  --xlx-orange-500: #f7931a;   /* PRIMARY — official bitcoin orange */
+  --xlx-orange-600: #d97608;
+  --xlx-orange-700: #a85700;
+  --xlx-orange-800: #6b3700;
+
+  /* Neutral — true blacks → cool greys → off-white */
+  --xlx-ink-1000: #000000;     /* deepest, product photography backdrop */
+  --xlx-ink-950:  #0a0a0c;     /* page bg */
+  --xlx-ink-900:  #111114;     /* surface */
+  --xlx-ink-800:  #1a1a1f;     /* card */
+  --xlx-ink-700:  #25252c;     /* card raised */
+  --xlx-ink-600:  #3a3a44;     /* border strong */
+  --xlx-ink-500:  #5a5a66;     /* border */
+  --xlx-ink-400:  #8a8a96;     /* text muted */
+  --xlx-ink-300:  #b8b8c0;     /* text secondary on dark */
+  --xlx-ink-200:  #d8d8dc;     /* text on dark */
+  --xlx-ink-100:  #ececef;     /* surface (light theme) */
+  --xlx-ink-50:   #f6f6f7;     /* page bg (light theme) */
+  --xlx-ink-0:    #ffffff;
+
+  /* Steel — supports the Yokis hardware product photography */
+  --xlx-steel-light: #e6e6ea;
+  --xlx-steel:       #b9b9c1;
+  --xlx-steel-dark:  #6e6e78;
+
+  /* Status */
+  --xlx-success: #2dd47a;
+  --xlx-warning: #ffb84a;
+  --xlx-danger:  #ff4757;
+  --xlx-info:    #38bdf8;
+
+  /* ============ SEMANTIC — DARK THEME (default) ============ */
+  --xlx-bg:           var(--xlx-ink-950);
+  --xlx-bg-elevated:  var(--xlx-ink-900);
+  --xlx-surface:      var(--xlx-ink-800);
+  --xlx-surface-2:    var(--xlx-ink-700);
+
+  --xlx-fg:           var(--xlx-ink-0);
+  --xlx-fg-1:         var(--xlx-ink-200);   /* body */
+  --xlx-fg-2:         var(--xlx-ink-300);   /* secondary */
+  --xlx-fg-3:         var(--xlx-ink-400);   /* muted */
+
+  --xlx-border:       var(--xlx-ink-700);
+  --xlx-border-2:     var(--xlx-ink-600);
+  --xlx-divider:      var(--xlx-ink-800);
+
+  --xlx-accent:       var(--xlx-orange-500);
+  --xlx-accent-hover: var(--xlx-orange-400);
+  --xlx-accent-press: var(--xlx-orange-600);
+  --xlx-on-accent:    #1a0d00;
+
+  /* ============ TYPE FAMILIES ============ */
+  --xlx-font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --xlx-font-body:    'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --xlx-font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ============ TYPE SCALE ============ */
+  --xlx-fs-hero:   clamp(48px, 8vw, 120px);
+  --xlx-fs-h1:     clamp(40px, 5vw, 72px);
+  --xlx-fs-h2:     clamp(32px, 3.6vw, 48px);
+  --xlx-fs-h3:     28px;
+  --xlx-fs-h4:     22px;
+  --xlx-fs-lead:   20px;
+  --xlx-fs-body:   16px;
+  --xlx-fs-small:  14px;
+  --xlx-fs-mono:   13px;
+  --xlx-fs-eyebrow: 12px;
+
+  --xlx-lh-tight:   1.04;
+  --xlx-lh-snug:    1.18;
+  --xlx-lh-body:    1.55;
+
+  --xlx-tracking-tight:   -0.02em;
+  --xlx-tracking-normal:  0;
+  --xlx-tracking-wide:    0.04em;
+  --xlx-tracking-mono:    0.01em;
+  --xlx-tracking-eyebrow: 0.18em;
+
+  /* ============ SPACING ============ */
+  --xlx-space-1:  4px;
+  --xlx-space-2:  8px;
+  --xlx-space-3:  12px;
+  --xlx-space-4:  16px;
+  --xlx-space-5:  20px;
+  --xlx-space-6:  24px;
+  --xlx-space-8:  32px;
+  --xlx-space-10: 40px;
+  --xlx-space-12: 48px;
+  --xlx-space-16: 64px;
+  --xlx-space-20: 80px;
+  --xlx-space-24: 96px;
+  --xlx-space-32: 128px;
+
+  /* ============ RADII ============ */
+  --xlx-radius-xs: 4px;
+  --xlx-radius-sm: 8px;
+  --xlx-radius-md: 12px;
+  --xlx-radius-lg: 16px;
+  --xlx-radius-xl: 24px;
+  --xlx-radius-pill: 999px;
+
+  /* ============ SHADOWS / GLOWS ============ */
+  --xlx-shadow-card:  0 1px 0 rgba(255,255,255,0.04) inset, 0 8px 24px rgba(0,0,0,0.45);
+  --xlx-shadow-pop:   0 24px 60px rgba(0,0,0,0.55), 0 2px 0 rgba(255,255,255,0.04) inset;
+  --xlx-shadow-float: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+  --xlx-glow-orange:  0 0 0 1px rgba(247,147,26,0.45), 0 0 32px rgba(247,147,26,0.35);
+  --xlx-glow-orange-soft: 0 0 80px rgba(247,147,26,0.18);
+
+  /* ============ MOTION ============ */
+  --xlx-ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --xlx-ease-in:    cubic-bezier(0.55, 0, 0.7, 0.2);
+  --xlx-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --xlx-dur-fast:   140ms;
+  --xlx-dur:        220ms;
+  --xlx-dur-slow:   420ms;
+}
+
+/* ============ LIGHT THEME (bright techy variant) ============ */
+[data-theme="light"] {
+  --xlx-bg:           var(--xlx-ink-50);
+  --xlx-bg-elevated:  var(--xlx-ink-0);
+  --xlx-surface:      var(--xlx-ink-0);
+  --xlx-surface-2:    var(--xlx-ink-100);
+
+  --xlx-fg:           var(--xlx-ink-1000);
+  --xlx-fg-1:         #16161a;
+  --xlx-fg-2:         #404048;
+  --xlx-fg-3:         #6c6c76;
+
+  --xlx-border:       #e2e2e7;
+  --xlx-border-2:     #c8c8d0;
+  --xlx-divider:      #ececef;
+
+  --xlx-shadow-card:  0 1px 2px rgba(16,16,20,0.05), 0 8px 24px rgba(16,16,20,0.06);
+  --xlx-shadow-pop:   0 12px 40px rgba(16,16,20,0.10);
+}
+
+/* ============ SEMANTIC ELEMENT STYLES ============ */
+.xlx-hero, .xlx-h0 {
+  font-family: var(--xlx-font-display);
+  font-size: var(--xlx-fs-hero);
+  font-weight: 600;
+  line-height: var(--xlx-lh-tight);
+  letter-spacing: var(--xlx-tracking-tight);
+}
+.xlx-h1, h1 {
+  font-family: var(--xlx-font-display);
+  font-size: var(--xlx-fs-h1);
+  font-weight: 600;
+  line-height: var(--xlx-lh-tight);
+  letter-spacing: var(--xlx-tracking-tight);
+}
+.xlx-h2, h2 {
+  font-family: var(--xlx-font-display);
+  font-size: var(--xlx-fs-h2);
+  font-weight: 600;
+  line-height: var(--xlx-lh-snug);
+  letter-spacing: var(--xlx-tracking-tight);
+}
+.xlx-h3, h3 {
+  font-family: var(--xlx-font-display);
+  font-size: var(--xlx-fs-h3);
+  font-weight: 600;
+  line-height: var(--xlx-lh-snug);
+}
+.xlx-h4, h4 {
+  font-family: var(--xlx-font-display);
+  font-size: var(--xlx-fs-h4);
+  font-weight: 500;
+  line-height: var(--xlx-lh-snug);
+}
+.xlx-lead {
+  font-family: var(--xlx-font-body);
+  font-size: var(--xlx-fs-lead);
+  font-weight: 400;
+  line-height: var(--xlx-lh-body);
+  color: var(--xlx-fg-1);
+}
+.xlx-body, p {
+  font-family: var(--xlx-font-body);
+  font-size: var(--xlx-fs-body);
+  font-weight: 400;
+  line-height: var(--xlx-lh-body);
+  color: var(--xlx-fg-1);
+}
+.xlx-small {
+  font-size: var(--xlx-fs-small);
+  line-height: 1.5;
+  color: var(--xlx-fg-2);
+}
+.xlx-mono, code, kbd, pre {
+  font-family: var(--xlx-font-mono);
+  font-size: var(--xlx-fs-mono);
+  letter-spacing: var(--xlx-tracking-mono);
+}
+.xlx-eyebrow {
+  font-family: var(--xlx-font-mono);
+  font-size: var(--xlx-fs-eyebrow);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--xlx-tracking-eyebrow);
+  color: var(--xlx-accent);
+}
+
+/* Default page chrome — opt in by class so the tokens stay neutral */
+.xlx-page {
+  background: var(--xlx-bg);
+  color: var(--xlx-fg);
+  font-family: var(--xlx-font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
