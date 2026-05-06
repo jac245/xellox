@@ -11,7 +11,7 @@ import EducationPage from './components/EducationPage'
 import PartnersPage from './components/PartnersPage'
 
 const PRODUCTS = {
-  yokis:     { id: 'yokis',     name: 'Yokis Steel Backup',    sat: 420000, usd: 249 },
+  yokis:     { id: 'yokis',     name: 'Yokis Steel Backup',    sat: 150000, usd: 89 },
   'plate-1': { id: 'plate-1',  name: 'Yokis Plate (single)',   sat:  90000, usd:  59 },
   'plate-3': { id: 'plate-3',  name: 'Backup Set · 3 Plates', sat: 240000, usd: 149 },
 }

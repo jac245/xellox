@@ -70,7 +70,7 @@ const COMPARISON = [
   },
   {
     feature: 'Starting price',
-    yokis: '$249 (3 plates)',
+    yokis: '$89 (3 plates)',
     cs: '$99+ (1 plate)',
     ct: '$149+ (1 plate)',
     bp: '$79+ (1 plate)',
@@ -151,8 +151,8 @@ export default function ProductPage({ onBuy, navigate }) {
               <span className="prod-pill"><ShieldCheck size={12} /> Tamper-evident</span>
             </div>
             <div className="prod-price-row">
-              <span className="prod-btc">₿ 0.0042</span>
-              <span className="prod-usd">$249</span>
+              <span className="prod-btc">₿ 0.0015</span>
+              <span className="prod-usd">$89 · free shipping</span>
             </div>
             <p className="prod-includes">
               Includes <b>3 plates</b> · <b>tungsten scribe</b> · <b>4 tamper rivets</b>
@@ -191,6 +191,20 @@ export default function ProductPage({ onBuy, navigate }) {
                 <div className="steel-body">{body}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Engraving visual */}
+      <section className="prod-engraving-section">
+        <div className="container">
+          <div className="prod-engraving-band">
+            <img src="/engraving-pen.webp" alt="Engraving the plate" className="prod-engraving-img" />
+            <div className="prod-engraving-copy">
+              <span className="eyebrow">The scribe</span>
+              <h3>Tungsten carbide.<br />Included in every kit.</h3>
+              <p>Industrial-grade tungsten carbide tip. Harder than the steel it marks. Press firmly, draw your letters — full BIP-39 words, no codebook, no abbreviation. What you engrave is what you read back in 30 years.</p>
+            </div>
           </div>
         </div>
       </section>

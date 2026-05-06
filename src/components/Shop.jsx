@@ -19,8 +19,8 @@ export default function Shop({ onBuy, onViewProduct }) {
               Includes <b>3 plates</b> · <b>tungsten scribe</b> · <b>tamper rivets</b>
             </p>
             <div className="price-row">
-              <span className="btc">₿ 0.0042</span>
-              <span className="usd">from $249</span>
+              <span className="btc">₿ 0.0015</span>
+              <span className="usd">$89 · free shipping</span>
             </div>
             <div className="ctas">
               <button className="btn btn-primary btn-lg" onClick={() => onBuy('yokis')}>
@@ -32,7 +32,7 @@ export default function Shop({ onBuy, onViewProduct }) {
             </div>
           </div>
           <div className="img-stage" style={{ cursor: 'pointer' }} onClick={onViewProduct} title="View product">
-            <img src="/yokis-front.png" alt="Yokis Steel Backup" />
+            <img src="/yokis-plates-trio.webp" alt="Yokis Steel Backup" />
           </div>
         </div>
 

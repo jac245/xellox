@@ -18,6 +18,13 @@ export default function Features() {
           <h2>Cold by design.<br />Permanent on purpose.</h2>
           <p>Paper burns. Phones die. SaaS gets acquired. Steel waits.</p>
         </div>
+        <div className="features-visual-band">
+          <img src="/engraving-pen.webp" alt="Engraving the Yokis plate" className="features-engraving-img" />
+          <div className="features-band-copy">
+            <span className="eyebrow">Engineered for permanence</span>
+            <p>One tungsten carbide scribe. Press firmly. Write your 24 words exactly as they appear. No abbreviations. No encoding tables. No tools to buy. No instructions to follow.</p>
+          </div>
+        </div>
         <div className="feature-grid">
           {ITEMS.map(({ Icon, title, body }) => (
             <div className="feature" key={title}>
