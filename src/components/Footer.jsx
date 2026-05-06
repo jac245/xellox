@@ -1,5 +1,4 @@
 import { Twitter, Instagram, Github, Rss } from 'lucide-react'
-import { XellLogo } from './Header'
 
 export default function Footer({ navigate }) {
   function go(page, e) {
@@ -12,7 +11,7 @@ export default function Footer({ navigate }) {
       <div className="container">
         <div className="grid">
           <div className="brand-block">
-            <XellLogo size={28} />
+            <img src="/logo-x-mark.png" alt="Xellox" style={{ width: 28, height: 28, objectFit: 'contain', borderRadius: 4 }} />
             <p>Bitcoin self-custody, made physical. Hardware wallets and steel seed-phrase backups, machined in Berlin since 2023.</p>
           </div>
           <div>
