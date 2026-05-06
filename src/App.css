@@ -340,85 +340,75 @@ p { margin: 0; }
   font-family: var(--xlx-font-mono);
 }
 
-/* ===== Yokis 3D Card Flip ===== */
-.yokis-viewer-3d {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 0 8px;
-}
-.yokis-card {
-  width: 100%;
-  max-width: 480px;
-  aspect-ratio: 1 / 1;
-  perspective: 1400px;
-  cursor: pointer;
-}
-.yokis-card-inner {
-  width: 100%;
-  height: 100%;
+/* ===== Yokis Viewer ===== */
+.yokis-viewer {
   position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.yokis-card {
-  width: 100%;
-  max-width: 480px;
-  aspect-ratio: 1 / 1;
-  perspective: 1400px;
-  cursor: pointer;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.65s cubic-bezier(0.34, 1.4, 0.64, 1);
-}
-.yokis-card.flipped {
-  transform: rotateY(180deg);
-}
-.yokis-face {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  aspect-ratio: 1;
+  perspective: 1600px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
-  overflow: hidden;
 }
-.yokis-face img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 32px 48px rgba(10,10,12,0.20));
-  user-select: none;
-  pointer-events: none;
-  transition: transform 0.3s;
+.yokis-viewer::before {
+  content: "";
+  position: absolute;
+  inset: 8% 8% 4% 8%;
+  background: radial-gradient(ellipse at 50% 60%, rgba(0,0,0,0.10), transparent 65%);
+  filter: blur(18px);
+  border-radius: 50%;
+  z-index: 0;
 }
-.yokis-card:hover .yokis-face img {
-  transform: scale(1.02);
+.yokis-viewer .stage {
+  width: 90%;
+  height: 90%;
+  transform-style: preserve-3d;
+  cursor: grab;
+  animation: yokis-bob 5s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
 }
-.yokis-face-back {
+.yokis-viewer .stage.spin {
+  animation: yokis-bob 5s ease-in-out infinite, yokis-spin 22s linear infinite;
+}
+.yokis-viewer .stage:active { cursor: grabbing; }
+
+@keyframes yokis-bob {
+  0%, 100% { translate: 0 -8px; }
+  50%       { translate: 0 8px; }
+}
+@keyframes yokis-spin {
+  0%   { transform: rotateY(0); }
+  100% { transform: rotateY(360deg); }
+}
+
+.yokis-viewer .face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 30px 40px rgba(10,10,12,0.22));
+}
+.yokis-viewer .face.back {
   transform: rotateY(180deg);
+  background-size: 95%;
 }
-.yokis-flip-hint {
-  font-family: var(--xlx-font-mono);
-  font-size: 11px;
-  color: var(--ink-4);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.yokis-flip-controls {
+.yokis-viewer .controls {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 4px;
   padding: 4px;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.7);
   backdrop-filter: blur(12px);
   border-radius: 999px;
   border: 1px solid var(--line);
 }
-.yokis-flip-controls button {
-  padding: 6px 16px;
+.yokis-viewer .controls button {
+  padding: 6px 14px;
   border-radius: 999px;
   background: transparent;
   border: 0;
@@ -428,8 +418,8 @@ p { margin: 0; }
   font-weight: 500;
   transition: all 0.15s;
 }
-.yokis-flip-controls button:hover { color: var(--ink); }
-.yokis-flip-controls button.active { background: var(--ink); color: #fff; }
+.yokis-viewer .controls button:hover { color: var(--ink); }
+.yokis-viewer .controls button.active { background: var(--ink); color: #fff; }
 
 /* ===== Section ===== */
 section.section { padding: 120px 0; }
@@ -1269,16 +1259,18 @@ section.section.alt { background: var(--bg-soft); }
 .spec-row:last-child { border-bottom: none; }
 .spec-label {
   font-family: var(--xlx-font-mono);
-  font-size: 12px;
+  font-size: 11px;
   color: var(--ink-3);
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .spec-value {
-  font-size: 14px;
+  font-family: var(--xlx-font-mono);
+  font-size: 13px;
   color: var(--ink-1);
-  line-height: 1.45;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
 }
 
 /* Comparison table */
@@ -1688,11 +1680,11 @@ section.section.alt { background: var(--bg-soft); }
   .step-card { padding: 18px 16px; border-radius: 14px; }
   .spec-row {
     grid-template-columns: 1fr;
-    gap: 2px;
-    padding: 12px 14px;
+    gap: 3px;
+    padding: 11px 16px;
   }
-  .spec-label { font-size: 11px; }
-  .spec-value { font-size: 13px; }
+  .spec-label { font-size: 10px; color: var(--ink-4); }
+  .spec-value { font-size: 12px; }
   section.section { padding: 64px 0; }
   .container { padding: 0 16px; }
 }

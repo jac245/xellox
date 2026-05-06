@@ -1,34 +1,61 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 export default function YokisViewer() {
-  const [flipped, setFlipped] = useState(false)
+  const [face, setFace] = useState('front')
+  const [autoSpin, setAutoSpin] = useState(true)
+  const [drag, setDrag] = useState({ active: false, lastX: 0, rotY: 0 })
+  const stageRef = useRef(null)
+
+  const manualRotY = face === 'front' ? drag.rotY : drag.rotY + 180
+  const stageStyle = autoSpin
+    ? {}
+    : { animation: 'yokis-bob 5s ease-in-out infinite', transform: `rotateY(${manualRotY}deg)` }
+
+  function onPointerDown(e) {
+    setAutoSpin(false)
+    setDrag(d => ({ ...d, active: true, lastX: e.clientX }))
+    e.currentTarget.setPointerCapture?.(e.pointerId)
+  }
+  function onPointerMove(e) {
+    if (!drag.active) return
+    const dx = e.clientX - drag.lastX
+    setDrag(d => ({ ...d, lastX: e.clientX, rotY: d.rotY + dx * 0.6 }))
+  }
+  function onPointerUp() { setDrag(d => ({ ...d, active: false })) }
 
   return (
-    <div className="yokis-viewer-3d">
+    <div className="yokis-viewer">
       <div
-        className={`yokis-card ${flipped ? 'flipped' : ''}`}
-        onClick={() => setFlipped(f => !f)}
-        title="Click to flip"
+        ref={stageRef}
+        className={`stage ${autoSpin ? 'spin' : ''}`}
+        style={stageStyle}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
       >
-        <div className="yokis-face yokis-face-front">
-          <img src="/yokis-device-front.png" alt="Yokis — front" draggable={false} />
-        </div>
-        <div className="yokis-face yokis-face-back">
-          <img src="/yokis-plates-back.webp" alt="Yokis — plates" draggable={false} />
-        </div>
+        <div
+          className="face front"
+          style={{ backgroundImage: 'url(/yokis-device-front.png)' }}
+        />
+        <div
+          className="face back"
+          style={{ backgroundImage: 'url(/yokis-plates-back.webp)' }}
+        />
       </div>
-      <div className="yokis-flip-hint">
-        {flipped ? 'Click to see front' : 'Click to see plates'}
-      </div>
-      <div className="yokis-flip-controls">
+      <div className="controls">
         <button
-          className={!flipped ? 'active' : ''}
-          onClick={() => setFlipped(false)}
+          className={face === 'front' && !autoSpin ? 'active' : ''}
+          onClick={() => { setAutoSpin(false); setFace('front'); setDrag(d => ({ ...d, rotY: 0 })) }}
         >Front</button>
         <button
-          className={flipped ? 'active' : ''}
-          onClick={() => setFlipped(true)}
-        >Plates</button>
+          className={face === 'back' && !autoSpin ? 'active' : ''}
+          onClick={() => { setAutoSpin(false); setFace('back'); setDrag(d => ({ ...d, rotY: 0 })) }}
+        >Back</button>
+        <button
+          className={autoSpin ? 'active' : ''}
+          onClick={() => { setAutoSpin(true); setDrag(d => ({ ...d, rotY: 0 })) }}
+        >Auto</button>
       </div>
     </div>
   )
