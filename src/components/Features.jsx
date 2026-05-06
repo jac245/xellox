@@ -19,7 +19,7 @@ export default function Features() {
           <p>Paper burns. Phones die. SaaS gets acquired. Steel waits.</p>
         </div>
         <div className="features-visual-band">
-          <img src="/engraving-pen.webp" alt="Engraving the Yokis plate" className="features-engraving-img" />
+          <img src="/engraving-pen-clean.webp" alt="Tungsten carbide engraving pen" className="features-engraving-img" />
           <div className="features-band-copy">
             <span className="eyebrow">Engineered for permanence</span>
             <p>One tungsten carbide scribe. Press firmly. Write your 24 words exactly as they appear. No abbreviations. No encoding tables. No tools to buy. No instructions to follow.</p>

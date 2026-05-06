@@ -199,7 +199,7 @@ export default function ProductPage({ onBuy, navigate }) {
       <section className="prod-engraving-section">
         <div className="container">
           <div className="prod-engraving-band">
-            <img src="/engraving-pen.webp" alt="Engraving the plate" className="prod-engraving-img" />
+            <img src="/engraving-pen-clean.webp" alt="Engraving the plate" className="prod-engraving-img" />
             <div className="prod-engraving-copy">
               <span className="eyebrow">The scribe</span>
               <h3>Tungsten carbide.<br />Included in every kit.</h3>

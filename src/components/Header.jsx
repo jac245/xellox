@@ -10,7 +10,7 @@ export default function Header({ cartCount = 0, onCart, navigate, currentView })
     <header className="xlx-header">
       <div className="container inner">
         <a href="#" className="brand" onClick={e => navTo('home', e)}>
-          <img src="/logo-x-mark.png" alt="Xellox" className="brand-logo" />
+          <img src="/logo-xellox.webp" alt="Xellox" className="brand-logo" />
           XELLOX
         </a>
         <nav>
